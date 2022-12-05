@@ -1,6 +1,6 @@
 //administrador.h
 //Save a administrador information
-
+//hola
 #ifndef _ADMINISTRADOR_
 #define _ADMINISTRADOR_
 
