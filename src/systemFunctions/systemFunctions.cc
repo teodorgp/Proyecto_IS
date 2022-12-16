@@ -50,8 +50,8 @@ bool existAdministrator(list<Administrativo> listOfAdministrators, string dni){/
    return false;
 }
 
-bool existMonitor(list<Monitor> listOfMonitors, string dni){//Función que comprueba si un monitor existe en el sistema
-   for(auto i = listOfMonitors.begin(); i != listOfMonitors.end(); i++)
+bool existCoordinator(list<Coordinator> listOfCoordinators, string dni){//Función que comprueba si un monitor existe en el sistema
+   for(auto i = listOfCoordinators.begin(); i != listOfCoordinators.end(); i++)
    {
       if (i->getDni()==dni)
       {

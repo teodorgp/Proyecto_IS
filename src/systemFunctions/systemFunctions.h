@@ -8,7 +8,7 @@ using namespace std;
 void clear();
 bool dniIsValid(string dni);
 bool existAdministrator(list<Administrativo> listOfAdministrators, string dni);
-bool existMonitor(list<Coordinador> listOfCoordinators, string dni);
+bool existCoordinator(list<Coordinador> listOfCoordinators, string dni);
 void intro();
 string login();
 int whoIs(list<Administrativo> listOfAdministrators, list<Coordinador> listOfCoordinators,string dni);
