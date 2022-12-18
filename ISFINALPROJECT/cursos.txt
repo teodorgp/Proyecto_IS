@@ -1,5 +1,5 @@
-0,Ingles,Ejemplo Curso 1: Ingles,1-1-1,1-1-2,persona1,100,0,3, req 1
-1,Matematicas,Ejemplo Curso 2: Matematicas,1-1-1,1-1-2,persona2,100,0,6, req 2
-2,Lengua,Ejemplo Curso 3: Lengua,1-1-1,1-1-2,persona3,100,0,2, req3
-3,Informatica,Ejemplo Curso 4: Informatica,1-1-1,1-1-2,persona4,100,0,0, req 4
-4,Educacion Fisica,Ejemplo Curso 5: Educacion Fisica,1-1-1,1-1-2,persona5,100,0,1, req 5
+1,Ingles,Ejemplo Curso 1: Ingles,1-1-1,1-1-2,persona1,100,0,3, req 1
+2,Matematicas,Ejemplo Curso 2: Matematicas,1-1-1,1-1-2,persona2,100,0,6, req 2
+3,Lengua,Ejemplo Curso 3: Lengua,1-1-1,1-1-2,persona3,100,0,2, req3
+4,Informatica,Ejemplo Curso 4: Informatica,1-1-1,1-1-2,persona4,100,0,0, req 4
+5,Educacion Fisica,Ejemplo Curso 5: Educacion Fisica,1-1-1,1-1-2,persona5,100,0,1, req 5

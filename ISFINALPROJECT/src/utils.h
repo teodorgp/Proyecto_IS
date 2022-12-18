@@ -43,6 +43,5 @@ void inscripcion(user &usuario, string idCurso);
 void volcarUsuarios(vector<user> usuarios);
 void actualizarUsuario(user &usuario, vector<user> &usuarios);
 void verMisCursos(user &usuario, vector<curso> curso);
-void findcurso(string curso_id, vector<curso>curso);
 
 #endif /* UTILS_H_ */

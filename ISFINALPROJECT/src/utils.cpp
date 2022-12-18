@@ -243,6 +243,7 @@ void menuAlumno(user usuario){
 
 	int opcion=99999;
 	vector<curso> cursos;
+	openCursos(cursos);
 
 
 	while(opcion!=0){
@@ -256,11 +257,12 @@ void menuAlumno(user usuario){
 
     	switch(opcion){
     	case 1:
-    		openCursos(cursos);
+
     		mostrarCursos(cursos,usuario);
 
     		break;
     	case 2:
+
     		verMisCursos(usuario,cursos);
     		break;
     	case 3:
@@ -342,6 +344,7 @@ void mostrarCursos(vector<curso> cursos, user usuario)
     	openFile(usuarios);
     	actualizarUsuario(usuario, usuarios);
     	volcarUsuarios(usuarios);
+    	cout<<usuario.getCursosAp()<<endl;
     }break;
     case 2:{
 
@@ -423,56 +426,58 @@ void verMisCursos(user &usuario, vector<curso> curso){
 	string cursostotal;
 
 	cursostotal=usuario.getCursosAp();
-	cout<<"Cursos:"<<cursostotal;
+	cout<<"Cursos:"<<cursostotal<<endl;
 	cursos=split(cursostotal,'-');
 
-	for(int i = 0; i<cursos.size();){
-		cout<<"----------------------"<<endl;
-		findcurso(cursos[i], curso);
+	for(int i = 0; i<curso.size();i++){
+		for(int j = 0; j<cursos.size();){
 
-		cout<<"¿Que desea hacer?"<<endl;
-		cout<<"1.Ver siguiente"<<endl;
-		cout<<"2.Ver anterior"<<endl;
-		cout<<"3.Dar de baja"<<endl;
-		cout<<"0.Salir"<<endl;
+			if(cursos[j]==curso[i].getId()){
+				cout<<"----------------------"<<endl;
+				cout<<curso[i].getNombre()<<endl;
+				cout<<"¿Que desea hacer?"<<endl;
+				cout<<"1.Ver siguiente"<<endl;
+				cout<<"2.Ver anterior"<<endl;
+				cout<<"3.Dar de baja"<<endl;
+				cout<<"0.Salir"<<endl;
+				cout<<"----------------------"<<endl;
 
-		int op;
-		cin>>op;
+				int op;
+				cin>>op;
 
-		switch(op){
-		case 1:{
-			if(i<cursos.size()-1){
+				switch(op){
+					case 1:{
+						if(j<cursos.size()-1){
+							j++;
+						}
+						else{
+							j=0;
+						}
+					}break;
+					case 2:{
+						if(j==0){
+							j=0;
+						}
+						else{
+							j--;
+						}
+					}break;
+					case 3:{
+						cout<<"Implementar dar de baja"<<endl;
+					}break;
+					case 0:{
+						j=cursos.size();
+					}break;
+					default:{
+						cout<<"Opcion no valida"<<endl;
+						j++;
+					}break;
+				}
+			}
+			else{
 				i++;
 			}
-			else{
-				i=0;
-			}
-		}break;
-		case 2:{
-			if(i==0){
-				i=0;
-			}
-			else{
-				i--;
-			}
-		}break;
-		case 3:{
-			cout<<"Implementar dar de baja"<<endl;
-		}break;
-		case 0:{
-			i=cursos.size();
-		}break;
-		default:{
-			cout<<"Opcion no valida"<<endl;
-		}break;
 		}
 	}
 }
 
-void findcurso(string curso_id, vector<curso>curso){
-	for(int i = 0; i<curso.size(); i++){
-		if(curso[i].getId()==curso_id){
-			cout<<curso[i].getNombre()<<endl;
-		}
-	}
-}
