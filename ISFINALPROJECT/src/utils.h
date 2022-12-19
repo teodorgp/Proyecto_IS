@@ -43,5 +43,22 @@ void inscripcion(user &usuario, string idCurso);
 void volcarUsuarios(vector<user> usuarios);
 void actualizarUsuario(user &usuario, vector<user> &usuarios);
 void verMisCursos(user &usuario, vector<curso> curso);
+bool checkCursos(vector<curso>cursos, string curso_id);
+void ordenaCursos(user &usuario);
+void limpiarfichero(string nombre);
+void editarDatosUsuario(vector<user> vectorusuarios, user &usuario);
+void mostrarlistaCursos(vector<curso>cursos);
+void mostrarCurso(curso curso);
+int stringToInt(string numero);
+void ordenaVector(vector<int> &vector);
+string intToString(int numero);
+bool checkCursoUser(vector<string>cursosuser, string curso_id);
+void bajaCursoUsuario(user &usuario, string idcurso);
+void verCursosCoord(vector<curso>cursos, vector<user>&usuarios, user usuario);
+void verParticipantesCurso(string cursoid, vector<user>usuarios);
+void editarCurso(curso &curso);
+void volcarCursos(vector<curso> cursos);
+void borrarCurso(vector<curso> &cursos, string id);
+void crearCursos(vector<curso>cursos);
 
 #endif /* UTILS_H_ */
