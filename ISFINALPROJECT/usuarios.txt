@@ -1,5 +1,5 @@
 000,p02rorog@uco.es,1234,0,-
-001,i92romuv@uco.es,alba,1,-
+001,victor,pepe,1,-
 002,i92popot@uco.es,1234,0,-
 003,m62babar@uco.es,5005,4,-
 004,l98sucaa@uco.es,meme,2,-
@@ -7,5 +7,5 @@
 006,manuel@uco.es,teclado,3,-
 007,jamesbond@uco.es,ingles,3,-
 008,benito@uco.es,musica,3,-
-009,miguel@uco.es,botella,3,-
+009,miguel@uco.es,botella,3,1
 010,valentin@uco.es,drive2,3,1-4

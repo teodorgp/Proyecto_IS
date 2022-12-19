@@ -679,19 +679,26 @@ void bajaCursoUsuario(user &usuario, string idcurso){
 	string cursostotal = usuario.getCursosAp();
 	vector<string> cursossplit;
 	cursossplit = split(cursostotal, '-');
+	string cursosnuevo;
+	cout<<"tamaño curso nuevo: "<<cursossplit.size()<<endl;
+	if(cursossplit.size()==1){
+		cursosnuevo="-";
+	}
 
-	for(int i = 0; i<cursossplit.size(); i++){
-		if(cursossplit[i]==idcurso){
-			cursossplit.erase(cursossplit.begin()+1);
+	else{
+		for(int i = 0; i<cursossplit.size(); i++){
+			if(cursossplit[i]==idcurso){
+				cursossplit.erase(cursossplit.begin()+1);
+			}
+			cout<<"Cursos split: "<<cursossplit[i]<<endl;
 		}
-		cout<<"Cursos split: "<<cursossplit[i]<<endl;
-	}
 
-	string cursosnuevo = cursossplit[0];
-	for(int i = 1; i<cursossplit.size(); i++){
-		cursosnuevo=cursosnuevo + "-" + cursossplit[i];
+		cursosnuevo = cursossplit[0];
+		for(int i = 1; i<cursossplit.size(); i++){
+			cursosnuevo=cursosnuevo + "-" + cursossplit[i];
+		}
+		cout<<"Cursos nuevos:"<<cursosnuevo<<endl;
 	}
-	cout<<"Cursos nuevos:"<<cursosnuevo<<endl;
 
 	usuario.setCursosAp(cursosnuevo);
 }
@@ -705,6 +712,7 @@ void verCursosCoord(vector<curso>cursos, vector<user>&usuarios, user usuario){
 		cout<<"3.Ver participantes"<<endl;
 		cout<<"4.Editar curso"<<endl;
 		cout<<"5.Dar de baja"<<endl;
+		cout<<"0.Salir"<<endl;
 
 		int opt;
 		cin>>opt;
@@ -738,6 +746,10 @@ void verCursosCoord(vector<curso>cursos, vector<user>&usuarios, user usuario){
 			borrarCurso(cursos,cursos[i].getId());
 			volcarCursos(cursos);
 		}break;
+		case 0:{
+			volcarCursos(cursos);
+			menuCoordCursos(usuario);
+		}break;
 		default:{
 			crearCursos(cursos);
 		}break;
@@ -763,6 +775,7 @@ void verParticipantesCurso(string cursoid, vector<user>usuarios){
 				cout<<"3.Salir de este curso"<<endl;
 
 				int opt;
+				cin>>opt;
 				if(opt==2){
 					bajaCursoUsuario(usuarios[i],cursoid);
 					actualizarUsuario(usuarios[i],usuarios);
@@ -789,44 +802,52 @@ void editarCurso(curso &curso){
 	cout<<"7.Cambiar requerimientos"<<endl;
 	cout<<"0.Salir"<<endl;
 
-	int opt;
-	cin>>opt;
+	int opt=99;
+
 
 	while(opt!=0){
+		cin>>opt;
 		switch(opt){
 		case 1:{
 			cout<<"Introduzca el nuevo nombre"<<endl;
 			string newname;
+			cin>>newname;
 			curso.setNombre(newname);
 		}break;
 		case 2:{
 			cout<<"Introduzca la nueva descripción"<<endl;
 			string newdesc;
+			cin>>newdesc;
 			curso.setDescripcion(newdesc);
 		}break;
 		case 3:{
 			cout<<"Introduzca la nueva fecha de inicio"<<endl;
 			string newfechin;
+			cin>>newfechin;
 			curso.setFechaInicio(newfechin);
 		}break;
 		case 4:{
 			cout<<"Introduzca la nueva fecha de fin"<<endl;
 			string newfechfin;
+			cin>>newfechfin;
 			curso.setFechaFin(newfechfin);
 		}break;
 		case 5:{
 			cout<<"Introduzca los ponentes que van a participar"<<endl;
 			string newpon;
+			cin>>newpon;
 			curso.setPonentes(newpon);
 		}break;
 		case 6:{
 			cout<<"Introduzca las menciones del curso"<<endl;
 			string newmen;
+			cin>>newmen;
 			curso.setMenciones(newmen);
 		}break;
 		case 7:{
 			cout<<"Introduzca los nuevos requerimientos"<<endl;
 			string newreq;
+			cin>>newreq;
 			curso.setRequerimientos(newreq);
 		}break;
 		case 0:
